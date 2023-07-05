@@ -24,13 +24,19 @@ public class main {
                 + "-----------------------------------------");
 
         int number;
-
+        int number2;
+       
         Scanner fighterscanner = new Scanner(System.in);
-
         // try catch for numbers only 
         number = fighterscanner.nextInt();
-
-        Dkong kong = new Dkong();
+        
+        
+     Dkong kong = new Dkong();
+        Panther panther = new Panther();
+        CrazyBird bird = new CrazyBird();
+        Elephant eleph = new Elephant();
+        Human human = new Human();
+        
         switch (number) {
             case 1:
                 kong.getName();
@@ -40,17 +46,64 @@ public class main {
                 System.out.println("\n *Color  -" + kong.color + "\n *ATK    -" + kong.atk + "\n *HP     -" + kong.hp + "\n *Speed  -" + kong.speed + "\n *xp     -"+ kong.xp);
                 break;
             case 2:
-
+                  panther.getName();
+                panther.getColor();
+                System.out.println("Welcome to the virims " + panther.name);
+                System.out.println("Your initial stats are ");
+                System.out.println("\n *Color  -" + panther.color + "\n *ATK    -" + panther.atk + "\n *HP     -" + panther.hp + "\n *Speed  -" + panther.speed + "\n *xp     -"+ panther.xp);
                 break;
             case 3:
-
+                 bird.getName();
+                bird.getColor();
+                System.out.println("Welcome to the virims " + bird.name);
+                System.out.println("Your initial stats are ");
+                System.out.println("\n *Color  -" + bird.color + "\n *ATK    -" + bird.atk + "\n *HP     -" + bird.hp + "\n *Speed  -" + bird.speed + "\n *xp     -"+ bird.xp);
                 break;
+             case 4:
+                 eleph.getName();
+                eleph.getColor();
+                System.out.println("Welcome to the virims " + eleph.name);
+                System.out.println("Your initial stats are ");
+                System.out.println("\n *Color  -" + eleph.color + "\n *ATK    -" + eleph.atk + "\n *HP     -" + eleph.hp + "\n *Speed  -" + eleph.speed + "\n *xp     -"+ eleph.xp);
+                break;
+             case 5:
+                  human.getName();
+                human.getColor();
+                System.out.println("Welcome to the virims " + human.name);
+                System.out.println("Your initial stats are ");
+                System.out.println("\n *Color  -" + human.color + "\n *ATK    -" + human.atk + "\n *HP     -" + human.hp + "\n *Speed  -" + human.speed + "\n *xp     -"+ human.xp);
+                 System.out.println("convert hero 1 or magician 2 , keep as human 3");
+                number2 = fighterscanner.nextInt();   //scanner 
+                 switch(number2){
+                     case 1: 
+                          superhero hero = new superhero(human.name,human.color);
+                          System.out.println("\n *Color  -" + hero.color + "\n *ATK    -" + hero.atk + "\n *HP     -" + hero.hp + "\n *Speed  -" + hero.speed + "\n *xp     -"+ hero.xp);
+                         break;
+                     case 2:
+                         Magician magic = new Magician(human.name,human.color);
+                          System.out.println("\n *Color  -" + magic.color + "\n *ATK    -" + magic.atk + "\n *HP     -" + magic.hp + "\n *Speed  -" + magic.speed + "\n *xp     -"+ magic.xp);
+                         break;
+                     case 3:
+                         break;
+                     default:
+                         System.out.print("invalid");
+                         break;
+                                 
+                 }
+                
+                break;
+                    
             default:
-
+               System.out.println("Invalid");
                 break;
         }
 
+     System.out.println("Welcome to the Arena  we introduce our fighters: \n" + kong.name + "\n" + panther.name + "\n" + bird.name + "\n" + eleph.name + "\n" + human.name );
     }
+     
+     
+     
+     
 }
 
 

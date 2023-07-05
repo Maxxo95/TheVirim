@@ -1,32 +1,29 @@
+
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-
-import java.util.Scanner;
-
 /**
  *
  * @author maxim
- */                                                      // AS many implements as you want only one extend
-public class Dkong extends Fighters {
-    
- String name = "Dkong";
-String color = "grey";
-int atk = 40;
-int hp = 40;
-int speed = 10;
+ */
+public class CrazyBird extends Fighters {
+     String name = "CrazyBird";
+String color = "Yellow";
+int atk = 5;
+int hp = 6;
+int speed = 89;
 int xp = 0; 
 int gold = 0; 
-
-   
 
 String getName(){
   try {
             Scanner scanners = new Scanner(System.in);
-            System.out.println("Enter the name of your D.kong");         
+            System.out.println("Enter the name of your Crazy Bird");         
             name = scanners.nextLine();
            
                                                            ///// still have to know for what errors   
@@ -91,17 +88,10 @@ String getName(){
         this.xp= xp;
     }
     
-      public Dkong(String name, String color, int atk, int hp, int speed, int xp) {
-     this.setName(name);   
-     this.setColor(color);
-     this.setatk(atk);
-     this.sethp(hp);
-     this.setspeed(speed);
-     this.setxp(xp);
-    }
     
     
-     public Dkong() {
+    
+     public CrazyBird() {
      this.setName(name);   
      this.setColor(color);
      this.setatk(atk);
@@ -110,3 +100,4 @@ String getName(){
      this.setxp(xp);
     }
 }
+
