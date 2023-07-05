@@ -15,8 +15,8 @@ public class Panther extends Fighters {
      String name = "Panther";
 String color = "Black";
 int atk = 20;
-int hp = 30;
-int speed = 40;
+int hp = 40;
+int speed = 60;
 int xp = 0; 
 int gold = 0; 
 
@@ -98,5 +98,15 @@ String getName(){
      this.sethp(hp);
      this.setspeed(speed);
      this.setxp(xp);
+    }
+
+    @Override
+    public void takeDamage(int atk) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void turn(int speed, Fighters oponent, Fighters myfig, int atk) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

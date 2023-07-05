@@ -14,9 +14,9 @@ import java.util.Scanner;
 public class CrazyBird extends Fighters {
      String name = "CrazyBird";
 String color = "Yellow";
-int atk = 5;
-int hp = 6;
-int speed = 89;
+int atk = 8;
+int hp = 10;
+int speed = 100;
 int xp = 0; 
 int gold = 0; 
 
@@ -98,6 +98,16 @@ String getName(){
      this.sethp(hp);
      this.setspeed(speed);
      this.setxp(xp);
+    }
+
+    @Override
+    public void takeDamage(int atk) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void turn(int speed, Fighters oponent, Fighters myfig, int atk) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

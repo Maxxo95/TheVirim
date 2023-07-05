@@ -11,11 +11,11 @@ import java.util.Scanner;
  *
  * @author maxim
  */
-public class Human {
+public class Human extends Fighters {
   String name = "Human";
 String color = "Blue";
-int atk = 5;
-int hp = 25;
+int atk = 10;
+int hp = 20;
 int speed = 15;
 int xp = 0; 
 int gold = 0; 
@@ -106,5 +106,15 @@ String getName(){
      this.sethp(hp);
      this.setspeed(speed);
      this.setxp(xp);
+    }
+
+    @Override
+    public void takeDamage(int atk) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void turn(int speed, Fighters oponent, Fighters myfig, int atk) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

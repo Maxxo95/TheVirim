@@ -22,4 +22,7 @@ public abstract class Fighters {
   //  public abstract void lvlup();
     
     // methods here are like noice is 
+
+    public abstract void takeDamage(int atk)  ;
+public abstract void turn(int speed, Fighters oponent, Fighters myfig, int atk) ;
 }

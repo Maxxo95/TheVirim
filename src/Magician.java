@@ -16,8 +16,8 @@
 
     public Magician(String name, String color) {
         super(name, color);
-        this.atk = 55;
-        this.hp = 25;
+        this.atk = 80;
+        this.hp = 35;
         this.speed = 15;
     }
     
