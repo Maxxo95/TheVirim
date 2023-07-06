@@ -13,9 +13,12 @@
 // classes can apply more thjan one interface, inheritance is limited to 1 super 
 public interface Fight  {
     // Define the interface for a character
+    
+    void start (int speed);
+    
     void turn (int speed, Fighters oponent, Fighters myfig, int atk,int hp);
-    void attack(Fighters opponent);
-    void takeDamage(int damage);
+   
+    void takeDamage(int atk, int hp, int speed);
     boolean isAlive();
 }
 
