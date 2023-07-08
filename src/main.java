@@ -15,16 +15,17 @@ public class main {
         int number;
         int number2 = 0;
         int number3;
-
+        int number4;
+        int number5;
         Scanner fighterscanner = new Scanner(System.in);
         Scanner fighterscanner1 = new Scanner(System.in);
         Scanner fighterscanners2 = new Scanner(System.in);
         // try catch for numbers only 
         number = fighterscanner.nextInt();
 
-        Dkong kong = new Dkong(160, 60, 20);
+        Dkong kong = new Dkong(60, 60, 20);
         Panther panther = new Panther(30, 20, 50);
-        CrazyBird bird = new CrazyBird(10, 8, 180);
+        CrazyBird bird = new CrazyBird(10, 8, 140);
         Human human = new Human(20, 10, 15);
         Magician magic = new Magician(35, 80, 20);
         superhero hero = new superhero(80, 40, 30);
@@ -65,33 +66,50 @@ public class main {
                 break;
 
             case 4:
-                
+
                 human.setName(username);
                 color = human.color;
-                System.out.println("Welcome to the virims " );
-             //   System.out.println("Your initial stats are ");
-              //  System.out.println("\n *Color  -" + human.color + "\n *ATK    -" + human.getatk() + "\n *HP     -" + human.gethp() + "\n *Speed  -" + human.getspeed() + "\n *xp     -" );
+                System.out.println("Welcome to the virims ");
+                //   System.out.println("Your initial stats are ");
+                //  System.out.println("\n *Color  -" + human.color + "\n *ATK    -" + human.getatk() + "\n *HP     -" + human.gethp() + "\n *Speed  -" + human.getspeed() + "\n *xp     -" );
                 System.out.println("To convert hero press 1 to  magician 2 , keep as human 3");
                 number2 = fighterscanner1.nextInt();   //scanner 
                 switch (number2) {
                     case 1:
 // NMAYBE THE ERROR ON THE FIGHT IS HERE BUT HAVE TO FIX HERO PART OF HUMAN CAUSE HP KEEPS BEEN STATIC FOR HERO AND MAGIC 
 //BUT  WORKS WITH OTHERS
-                        
-                       hero.getName();
-                       System.out.println("Your initial stats are ");
+
+                        hero.getName();
+                        System.out.println("Your initial stats are ");
                         System.out.println("\n *Color  -" + hero.getColor() + "\n *ATK    -" + hero.getatk() + "\n *HP     -" + hero.gethp() + "\n *Speed  -" + hero.getspeed() + "\n *xp     ");
                         break;
                     case 2:
-                           magic.getName();
-                         System.out.println("Your initial stats are ");  
- System.out.println("\n *Color  -" + magic.getColor() + "\n *ATK    -" + magic.getatk() + "\n *HP     -" + magic.gethp() + "\n *Speed  -" + magic.getspeed() + "\n *xp     ");
+                        magic.getName();
+                        System.out.println("Your initial stats are ");
+                        System.out.println("\n *Color  -" + magic.getColor() + "\n *ATK    -" + magic.getatk() + "\n *HP     -" + magic.gethp() + "\n *Speed  -" + magic.getspeed() + "\n *xp     ");
                         break;
                     case 3:
                         human.getName();
-                         human.setName(username);
-                         System.out.println("Your initial stats are ");
-               System.out.println("\n *Color  -" + human.color + "\n *ATK    -" + human.getatk() + "\n *HP     -" + human.gethp() + "\n *Speed  -" + human.getspeed() + "\n *xp     -" );
+                        human.setName(username);
+                        System.out.println("Your initial stats are ");
+                        System.out.println("\n *Color  -" + human.color + "\n *ATK    -" + human.getatk() + "\n *HP     -" + human.gethp() + "\n *Speed  -" + human.getspeed() + "\n *xp     -");
+                        System.out.println("Would you like to add a weapon?");
+                        System.out.println("1 - Yes , 2 - No");
+                        number4 = fighterscanner1.nextInt();
+
+                        if (number4 == 1) {
+                            //   System.out.println("1 - Yes , 2 - No");
+                            Weapon sword = new Weapon("Sword", 0, 20);
+                            Weapon shield = new Weapon("Shield", 15, 0);
+                            human.addweapon(sword, human);
+                            human.addweapon(shield, human);
+                            System.out.println("Your initial stats are ");
+                            System.out.println("\n *Color  -" + human.color + "\n *ATK    -" + human.getatk() + "\n *HP     -" + human.gethp() + "\n *Speed  -" + human.getspeed() + "\n *xp     -");
+                        } else if (number4 == 2) {
+                            //            System.out.println("1 - Yes , 2 - No");
+                        } else {
+                        }
+
                         break;
                     default:
                         System.out.print("invalid");
@@ -137,34 +155,120 @@ public class main {
 
                             kong.turn(hero.speed, hero, kong, hero.atk, hero.hp);
                         }
-                       if (kong.gethp() < 0) {
+                        if (kong.gethp() < 0) {
                             System.out.println("Hero WINS");
                         } else {
-                            System.out.println("you win");
+                            System.out.println("YOU WIN");
+                            System.out.println("Boss Fight");
+                            System.out.println("Pick your boss \n 1- Panther \n 2- CrazyBird");
+                            number5 = fighterscanners2.nextInt();
+                            switch (number5) {
+                                case 1:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, panther);
+                                    panther.start(panther, kong);
+                                    panther.bossconvertion(panther);
+                                    while (kong.isAlive() && panther.isAlive()) {
 
+                                        kong.turn(panther.speed, panther, kong, panther.getatk(), panther.hp);
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossPanther WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+
+                                    }
+                                    break;
+                                case 2:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, bird);
+                                    bird.start(bird, kong);
+                                    bird.bossconvertion(bird);
+                                    while (kong.isAlive() && bird.isAlive()) {
+
+                                        kong.turn(bird.speed, bird, kong, bird.getatk(), bird.hp);
+
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossCrazyBird WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+                                    }
+                                    break;
+                                default:
+                                    System.out.print("invalid");
+                                    break;
+
+                            }
                         }
+                        break;
+                    default:
+                        System.out.print("invalid");
                         break;
                     case 2:
                         kong.start(kong, magic);
                         magic.start(magic, kong);
-                       
 
-       System.out.println(" Your turn count is: " + (kong.getspeed()) + " riv turn count is " + magic.getspeed());
+                        System.out.println(" Your turn count is: " + (kong.getspeed()) + " riv turn count is " + magic.getspeed());
                         while (kong.isAlive() && magic.isAlive()) {
 
                             kong.turn(magic.speed, magic, kong, magic.getatk(), magic.hp);
                             magic.heal(magic, 0);
-                            
+
                         }
-   
-                        
+
                         if (kong.gethp() < 0) {
                             System.out.println("Magician WINS");
                         } else {
                             System.out.println("YOU WIN");
+                            System.out.println("Boss Fight");
+                            System.out.println("Pick your boss \n 1- Panther \n 2- CrazyBird");
+                            number5 = fighterscanners2.nextInt();
+                            switch (number5) {
+                                case 1:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, panther);
+                                    panther.start(panther, kong);
+                                    panther.bossconvertion(panther);
+                                    while (kong.isAlive() && panther.isAlive()) {
 
+                                        kong.turn(panther.speed, panther, kong, panther.getatk(), panther.hp);
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossPanther WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+
+                                    }
+                                    break;
+                                case 2:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, bird);
+                                    bird.start(bird, kong);
+                                    bird.bossconvertion(bird);
+                                    while (kong.isAlive() && bird.isAlive()) {
+
+                                        kong.turn(bird.speed, bird, kong, bird.getatk(), bird.hp);
+
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossCrazyBird WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+                                    }
+                                    break;
+                                default:
+                                    System.out.print("invalid");
+                                    break;
+
+                            }
                         }
                         break;
+
                     case 3:
                         kong.start(kong, panther);
                         panther.start(panther, kong);
@@ -177,24 +281,113 @@ public class main {
                             System.out.println("Panther WINS");
                         } else {
                             System.out.println("YOU WIN");
+                            System.out.println("Boss Fight");
+                            System.out.println("Pick your boss \n 1- Panther \n 2- CrazyBird");
+                            number5 = fighterscanners2.nextInt();
+                            switch (number5) {
+                                case 1:
+                                   panther = new Panther(30, 20, 50);
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, panther);
+                                    panther.start(panther, kong);
+                                    panther.bossconvertion(panther);
+                                    while (kong.isAlive() && panther.isAlive()) {
 
+                                        kong.turn(panther.speed, panther, kong, panther.getatk(), panther.hp);
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossPanther WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+
+                                    }
+                                    break;
+                                case 2:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, bird);
+                                    bird.start(bird, kong);
+                                    bird.bossconvertion(bird);
+                                    while (kong.isAlive() && bird.isAlive()) {
+
+                                        kong.turn(bird.speed, bird, kong, bird.getatk(), bird.hp);
+
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossCrazyBird WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+                                    }
+                                    break;
+                                default:
+                                    System.out.print("invalid");
+                                    break;
+
+                            }
                         }
                         break;
+
                     case 4:
                         kong.start(kong, bird);
                         bird.start(bird, kong);
                         while (kong.isAlive() && bird.isAlive()) {
 
                             kong.turn(bird.speed, bird, kong, bird.getatk(), bird.hp);
+
                         }
 
                         if (kong.gethp() < 0) {
                             System.out.println("CrazyBird WINS");
                         } else {
                             System.out.println("YOU WIN");
+                            System.out.println("Boss Fight");
+                            System.out.println("Pick your boss \n 1- Panther \n 2- CrazyBird");
+                            number5 = fighterscanners2.nextInt();
+                            switch (number5) {
+                                case 1:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, panther);
+                                    panther.start(panther, kong);
+                                    panther.bossconvertion(panther);
+                                    while (kong.isAlive() && panther.isAlive()) {
 
+                                        kong.turn(panther.speed, panther, kong, panther.getatk(), panther.hp);
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossPanther WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+
+                                    }
+                                    break;
+                                case 2:
+                                      bird = new CrazyBird(10, 8, 140);
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, bird);
+                                    bird.start(bird, kong);
+                                    bird.bossconvertion(bird);
+                                    while (kong.isAlive() && bird.isAlive()) {
+
+                                        kong.turn(bird.speed, bird, kong, bird.getatk(), bird.hp);
+
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossCrazyBird WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+                                    }
+                                    break;
+                                default:
+                                    System.out.print("invalid");
+                                    break;
+
+                            }
                         }
                         break;
+
                     case 5:
                         kong.start(kong, human);
                         human.start(human, kong);
@@ -207,19 +400,59 @@ public class main {
                             System.out.println("Human WINS");
                         } else {
                             System.out.println("YOU WIN");
+                            System.out.println("Boss Fight");
+                            System.out.println("Pick your boss \n 1- Panther \n 2- CrazyBird");
+                            number5 = fighterscanners2.nextInt();
+                            switch (number5) {
+                                case 1:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, panther);
+                                    panther.start(panther, kong);
+                                    panther.bossconvertion(panther);
+                                    while (kong.isAlive() && panther.isAlive()) {
 
+                                        kong.turn(panther.speed, panther, kong, panther.getatk(), panther.hp);
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossPanther WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+
+                                    }
+                                    break;
+                                case 2:
+                                    kong = new Dkong(60, 60, 20);
+                                    kong.start(kong, bird);
+                                    bird.start(bird, kong);
+                                    bird.bossconvertion(bird);
+                                    while (kong.isAlive() && bird.isAlive()) {
+
+                                        kong.turn(bird.speed, bird, kong, bird.getatk(), bird.hp);
+
+                                    }
+
+                                    if (kong.gethp() < 0) {
+                                        System.out.println("BossCrazyBird WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+                                    }
+                                    break;
+                                default:
+                                    System.out.print("invalid");
+                                    break;
+
+                            }
                         }
                         break;
-                    default:
-                        System.out.print("invalid");
-                        break;
+
                 }
                 break;
 /////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 
             case 2:
-                // IF PICK King Kong in the pass charac selection switch
+                // IF PICK PANTHER in the pass charac selection switch
 
                 System.out.println(" -" + username + "\npick an oponent and press enter");
                 System.out.println(" 1- SuperHero \n 2- Magician \n 3- Dkong \n 4- CrazyBird \n 5- Human \n \n");
@@ -237,7 +470,7 @@ public class main {
 
                             panther.turn(hero.speed, hero, panther, hero.atk, hero.hp);
                         }
-                                      if (panther.gethp() < 0) {
+                        if (panther.gethp() < 0) {
                             System.out.println("Hero WINS");
                         } else {
                             System.out.println("You win");
@@ -247,17 +480,17 @@ public class main {
                     case 2:
                         panther.start(panther, magic);
                         magic.start(magic, panther);
-                         System.out.println(" Your turn count is: " + (panther.getspeed()) + " riv turn count is " + magic.getspeed());
+                        System.out.println(" Your turn count is: " + (panther.getspeed()) + " riv turn count is " + magic.getspeed());
                         while (panther.isAlive() && magic.isAlive()) {
 
-                           
                             panther.turn(magic.speed, magic, panther, magic.atk, magic.hp);
-                            
-                            if(magic.gethp()<0){
-                               magic.heal(magic, 0);}
-                            else{}
+
+                            if (magic.gethp() < 0) {
+                                magic.heal(magic, 0);
+                            } else {
+                            }
                         }
-                                     if (panther.gethp() < 0) {
+                        if (panther.gethp() < 0) {
                             System.out.println("MAGICIAN WINS");
                         } else {
                             System.out.println("You win");
@@ -279,13 +512,13 @@ public class main {
                         }
                         break;
                     case 4:
-                          panther.start(panther, bird);
+                        panther.start(panther, bird);
                         bird.start(bird, panther);
                         while (panther.isAlive() && bird.isAlive()) {
 
                             panther.turn(bird.speed, bird, panther, bird.atk, bird.hp);
                         }
-                                     if (panther.gethp() < 0) {
+                        if (panther.gethp() < 0) {
                             System.out.println("CrazyBird WINS");
                         } else {
                             System.out.println("You win");
@@ -293,13 +526,13 @@ public class main {
                         }
                         break;
                     case 5:
-                         panther.start(panther, human);
+                        panther.start(panther, human);
                         human.start(human, panther);
                         while (panther.isAlive() && human.isAlive()) {
 
                             panther.turn(human.speed, human, panther, human.atk, human.hp);
                         }
-                                      if (panther.gethp() < 0) {
+                        if (panther.gethp() < 0) {
                             System.out.println("HUMAN WINS");
                         } else {
                             System.out.println("You win");
@@ -396,5 +629,6 @@ public class main {
                 System.out.println("developing");
                 break;
         }
+
     }
 }

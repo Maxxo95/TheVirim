@@ -8,7 +8,7 @@
  *
  * @author maxim
  */
-
+//////////// MORE LIKE SPECIAL MOVEMENTS INTERFACE
 
 // classes can apply more thjan one interface, inheritance is limited to 1 super 
 public interface Fight  {

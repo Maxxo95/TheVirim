@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author maxim
  */
-public class CrazyBird extends Fighters implements Fight {
+public class CrazyBird extends Fighters implements Fight, BossInterface {
      String name = "CrazyBird";
 String color = "Yellow";
 int atk ;
@@ -204,6 +204,15 @@ String getName(){
     @Override
     public void heal(Fighters target, int amount) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+int bosslvl= 1;
+    @Override
+    public void bossconvertion(Fighters target) {
+      
+      bosslvl++;
+      target.sethp(target.gethp()*bosslvl);
+          target.setatk(target.getatk()*bosslvl);
+            target.setspeed(target.getspeed()*bosslvl);
     }
     
 
