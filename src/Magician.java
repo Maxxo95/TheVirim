@@ -11,8 +11,8 @@
 
     public class Magician extends Human implements Fight {
     
-  String name = "";
-    String color = "";
+  String name = "Magician";
+    String color = "Purple";
     int atk ;
     int hp ;
     int speed ;
@@ -72,7 +72,7 @@
 
 
 
- 
+  
     int hptemp;
     private int vsturn ;
    private int turn  ;
@@ -92,10 +92,12 @@
     rivalspeed = oponent.getspeed();  
     playeratk = player.getatk() ;
     rivalatk = oponent.getatk();
+ if(vsturn == 0 && turn ==0){
     turn = speedtemp;
     vsturn = rivalspeed;
+     //  System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
     
-    }
+    }}
     
     @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
@@ -111,7 +113,12 @@
             oponent.takeDamage(oponent, playeratk);
             vsturn += oponent.getspeed();
             
+            
+            
+            
+            
              System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+       
         }
     }
    
@@ -125,12 +132,11 @@
         System.out.println("   After the atack you have left " + playerhp + " points");
        
         
-        if(playerhp > 0){
-            target.sethp(0);
+        
         }
         
-    }
     
+   
  /*       @Override
     public void rivtakeDamage(int atk, int hp, int speed) {
 
@@ -149,7 +155,7 @@
     @Override
     public boolean isAlive() {
         // Implement the logic to check if Dkong is alive
-        return playerhp > 0;
+        return this.gethp() > 0;
     }
     
   /*   @Override
@@ -158,6 +164,21 @@
         return rivalhp > 0;
     }
 */
+int healcount = 1;
+    @Override
+    public void heal(Fighters target, int amount) {
+       if( healcount > 0) {
+           System.out.println("SPECIAL Movement, Magician has healed");
+         
+           target.sethp(35);
+           healcount --;
+           
+           
+       }
+       else{
+           
+       }
+    }
     
 
 }

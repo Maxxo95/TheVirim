@@ -111,8 +111,8 @@ public class Dkong extends Fighters implements Fight {
 
  
     int hptemp;
-    private int vsturn ;
-   private int turn  ;
+    private int vsturn = 0 ;
+   private int turn  = 0 ;
     int playerhp  ;
     int rivalhp;
     int rivalspeed;
@@ -129,10 +129,17 @@ public class Dkong extends Fighters implements Fight {
     rivalspeed = oponent.getspeed();  
     playeratk = player.getatk() ;
     rivalatk = oponent.getatk();
+  
+    if(vsturn == 0 && turn ==0){
     turn = speedtemp;
     vsturn = rivalspeed;
+     
     
     }
+    else{}
+    }
+    
+  
     
     @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
@@ -141,7 +148,7 @@ public class Dkong extends Fighters implements Fight {
             System.out.println(this.name + " is taking damage");
             myfig.takeDamage(myfig, oponent.getatk());
             turn += speedtemp;
-            
+           
              System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
         } else {
             System.out.println(" The Rival is taking damage");
@@ -194,6 +201,11 @@ public class Dkong extends Fighters implements Fight {
         return rivalhp > 0;
     }
 */
+
+    @Override
+    public void heal(Fighters target, int amount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
 }

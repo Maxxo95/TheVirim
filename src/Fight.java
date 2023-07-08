@@ -12,14 +12,21 @@
 
 // classes can apply more thjan one interface, inheritance is limited to 1 super 
 public interface Fight  {
+    
+    
     // Define the interface for a character
     
-    void start (Fighters player, Fighters oponent);    
-    void turn (int speed, Fighters oponent, Fighters myfig, int atk,int hp);
+  //  void start (Fighters player, Fighters oponent);    
+  //  void turn (int speed, Fighters oponent, Fighters myfig, int atk,int hp);
   // void rivtakeDamage(int atk, int hp, int speed);
-    void takeDamage(Fighters target, int atk);
+//    void takeDamage(Fighters target, int atk);
+ 
     boolean isAlive();
   //  boolean opAlive();
+    
+      void heal(Fighters target, int amount); // interface for special move for magician other players cant implement it 
+    
+    
 }
 
 

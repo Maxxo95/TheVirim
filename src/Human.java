@@ -121,8 +121,7 @@ String getName(){
     int playeratk  ;
     int rivalatk;
 
-    
-      @Override
+        @Override
     public void start(Fighters player, Fighters oponent) {
     playerhp = player.gethp() ;
     rivalhp = oponent.gethp();
@@ -130,10 +129,17 @@ String getName(){
     rivalspeed = oponent.getspeed();  
     playeratk = player.getatk() ;
     rivalatk = oponent.getatk();
+  
+    if(vsturn == 0 && turn ==0){
     turn = speedtemp;
     vsturn = rivalspeed;
+     
     
     }
+    else{}
+    }
+    
+  
     
     @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
@@ -142,7 +148,7 @@ String getName(){
             System.out.println(this.name + " is taking damage");
             myfig.takeDamage(myfig, oponent.getatk());
             turn += speedtemp;
-            
+           
              System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
         } else {
             System.out.println(" The Rival is taking damage");
@@ -153,7 +159,7 @@ String getName(){
         }
     }
    
-       @Override
+    @Override
     public void takeDamage(Fighters target, int atk) {
 
         System.out.println(this.name + " has " + target.gethp() + " life points");
@@ -188,13 +194,18 @@ String getName(){
         // Implement the logic to check if Dkong is alive
         return playerhp > 0;
     }
+    
   /*   @Override
     public boolean opAlive() {
         // Implement the logic to check if Dkong is alive
         return rivalhp > 0;
     }
 */
+
+    @Override
+    public void heal(Fighters target, int amount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
 }
-

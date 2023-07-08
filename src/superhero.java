@@ -11,8 +11,8 @@
 
     public class superhero extends Human implements Fight {
     
-  String name = "";
-    String color = "";
+  String name = "Superman";
+    String color = "Blue";
     int atk ;
     int hp ;
     int speed ;
@@ -71,8 +71,7 @@
 
 
 
-
- 
+  
     int hptemp;
     private int vsturn ;
    private int turn  ;
@@ -83,7 +82,6 @@
     int playeratk  ;
     int rivalatk;
 
-    
       @Override
     public void start(Fighters player, Fighters oponent) {
     playerhp = player.gethp() ;
@@ -92,10 +90,17 @@
     rivalspeed = oponent.getspeed();  
     playeratk = player.getatk() ;
     rivalatk = oponent.getatk();
+  
+    if(vsturn == 0 && turn ==0){
     turn = speedtemp;
     vsturn = rivalspeed;
+     
     
     }
+    else{}
+    }
+    
+  
     
     @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
@@ -104,7 +109,7 @@
             System.out.println(this.name + " is taking damage");
             myfig.takeDamage(myfig, oponent.getatk());
             turn += speedtemp;
-            
+           
              System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
         } else {
             System.out.println(" The Rival is taking damage");
@@ -125,12 +130,11 @@
         System.out.println("   After the atack you have left " + playerhp + " points");
        
         
-        if(playerhp > 0){
-            target.sethp(0);
+        
         }
         
-    }
     
+   
  /*       @Override
     public void rivtakeDamage(int atk, int hp, int speed) {
 
@@ -158,6 +162,11 @@
         return rivalhp > 0;
     }
 */
+
+    @Override
+    public void heal(Fighters target, int amount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
 }
