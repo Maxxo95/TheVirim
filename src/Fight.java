@@ -14,12 +14,12 @@
 public interface Fight  {
     // Define the interface for a character
     
-    void start (int speed);
-    
+    void start (Fighters player, Fighters oponent);    
     void turn (int speed, Fighters oponent, Fighters myfig, int atk,int hp);
-   
-    void takeDamage(int atk, int hp, int speed);
+  // void rivtakeDamage(int atk, int hp, int speed);
+    void takeDamage(Fighters target, int atk);
     boolean isAlive();
+  //  boolean opAlive();
 }
 
 
