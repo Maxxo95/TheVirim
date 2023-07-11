@@ -8,7 +8,7 @@
  *
  * @author maxim
  */
-public class Weapon implements weaponInterface {
+public abstract class Weapon  {
 
     int atk;
     int hp;
@@ -45,9 +45,7 @@ public int getatk() {
   this.sethp(hp);
   }  
 
-    public void addweapon(Weapon targetweapon, Fighters target) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
 
 

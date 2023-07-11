@@ -216,4 +216,13 @@ String getName(){
     }
 
   
+
+    @Override
+    public void bossconvertion(Fighters target, int lvl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
+  
 }

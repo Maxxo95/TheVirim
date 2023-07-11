@@ -20,67 +20,44 @@ int speed;
 int xp = 0; 
 int gold = 0; 
 
-String getName(){
-  try {
+
+    @Override
+   public String getName() {
+        try {
             Scanner scanners = new Scanner(System.in);
-            System.out.println("Enter the name of your Crazy Bird");         
+            System.out.println("Enter the name of your CrazyBird");
             name = scanners.nextLine();
-           
-                                                           ///// still have to know for what errors   
+
+            ///// still have to know for what errors   
         } catch (Exception e) {
             System.out.println("You disoveid the rules");
-        }   
+        }
 
- return name;
+        return name;
+    }
+    @Override
+    public String getname(){
+    return name;
 }
-   public void setName(String name) { //it takes the value from somwhere else
-       
-        this.name = name;
-    }  
-   
-   
-   String getColor(){
-  try {
+    
+   @Override
+    public String getcolor(){
+    return color;
+}
+
+    @Override
+    String getColor() {
+        try {
             Scanner scanners = new Scanner(System.in);
-            System.out.println("Enter the color of " + name);         
+            System.out.println("Enter the color of " + name);
             color = scanners.nextLine();
-           
-            
+
         } catch (Exception e) {
             System.out.println("You disoveid the rules");
-        }   
+        }
 
- return color;
-}
-   public void setColor(String color) { //it takes the value from somwhere else
-       
-        this.color = color;
-    }  
-   /*
-    public Integer getatk() {
-        return atk;
+        return color;
     }
-
-    public void setatk(int atk) {
-        this.atk = atk;
-    }
-
-    public Integer gethp() {
-        return hp;
-    }
-
-    public void sethp(int hp) {
-        this.hp = hp;
-    }
-
-    public Integer getspeed() {
-        return speed;
-    }
-
-    public void setspeed(int speed) {
-        this.speed = speed;
-    }
-*/
     public Integer getxp() {
         return xp;
     }
@@ -207,7 +184,7 @@ String getName(){
     }
 int bosslvl= 1;
     @Override
-    public void bossconvertion(Fighters target) {
+    public void bossconvertion(Fighters target, int lvl) {
       
       bosslvl++;
       target.sethp(target.gethp()*bosslvl);

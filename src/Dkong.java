@@ -20,7 +20,10 @@ public class Dkong extends Fighters implements Fight, BossInterface {
     int xp = 0;
     int gold = 0;
 
-    String getName() {
+   
+
+    @Override
+   public String getName() {
         try {
             Scanner scanners = new Scanner(System.in);
             System.out.println("Enter the name of your D.kong");
@@ -33,12 +36,17 @@ public class Dkong extends Fighters implements Fight, BossInterface {
 
         return name;
     }
+    @Override
+    public String getname(){
+    return name;
+}
+    
+   @Override
+    public String getcolor(){
+    return color;
+}
 
-    public void setName(String name) { //it takes the value from somwhere else
-
-        this.name = name;
-    }
-
+    @Override
     String getColor() {
         try {
             Scanner scanners = new Scanner(System.in);
@@ -52,35 +60,6 @@ public class Dkong extends Fighters implements Fight, BossInterface {
         return color;
     }
 
-    public void setColor(String color) { //it takes the value from somwhere else
-
-        this.color = color;
-    }
-/*
-    public Integer getatk() {
-        return atk;
-    }
-
-    public void setatk(int atk) {
-        this.atk = atk;
-    }
-
-    public Integer gethp() {
-        return hp;
-    }
-
-    public void sethp(int hp) {
-        this.hp = hp;
-    }
-
-    public Integer getspeed() {
-        return speed;
-    }
-
-    public void setspeed(int speed) {
-        this.speed = speed;
-    }
-*/
     public Integer getxp() {
         return xp;
     }
@@ -105,7 +84,24 @@ public class Dkong extends Fighters implements Fight, BossInterface {
   this.setColor(color);
   }  
 
+  int lvl;
+  void bossfight(Fighters myfig, Fighters boss){
+                                    myfig.start(myfig, boss);
+                                 
+                                    boss.bossconvertion(boss, lvl);
+                                    while (myfig.isAlive() && boss.isAlive()) {
 
+                                        myfig.turn(boss.speed, boss, myfig, boss.getatk(), boss.hp);
+                                    }
+
+                                    if (myfig.gethp() < 0) {
+                                        System.out.println("BossPanther WINS");
+                                    } else {
+                                        System.out.println("YOU WIN");
+
+                                    }
+  
+  }
 
 
 
@@ -208,12 +204,14 @@ public class Dkong extends Fighters implements Fight, BossInterface {
     }
     int bosslvl= 1;
     @Override
-    public void bossconvertion(Fighters target) {
+    public void bossconvertion(Fighters target, int lvl) {
       
       bosslvl++;
       target.sethp(target.gethp()*bosslvl);
           target.setatk(target.getatk()*bosslvl);
             target.setspeed(target.getspeed()*bosslvl);
     }
+
+
 
 }

@@ -168,7 +168,7 @@ int healcount = 1;
     @Override
     public void heal(Fighters target, int amount) {
        if( healcount > 0) {
-           System.out.println("SPECIAL Movement, Magician has healed");
+           System.out.println("Wait a second a SPECIAL Movement was casted, Magician has healed");
          
            target.sethp(35);
            healcount --;

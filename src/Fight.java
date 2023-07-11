@@ -21,7 +21,7 @@ public interface Fight  {
   // void rivtakeDamage(int atk, int hp, int speed);
 //    void takeDamage(Fighters target, int atk);
  
-    boolean isAlive();
+
   //  boolean opAlive();
     
       void heal(Fighters target, int amount); // interface for special move for magician other players cant implement it 

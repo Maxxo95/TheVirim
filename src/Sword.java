@@ -8,6 +8,10 @@
  *
  * @author maxim
  */
-public interface BossInterface {
-    void bossconvertion(Fighters target, int lvl);
+public class Sword extends Weapon {  //Weapon subclass 
+   Sword (String name, int hp, int atk ){
+        super(name,atk, hp);
+    }
+
+  
 }

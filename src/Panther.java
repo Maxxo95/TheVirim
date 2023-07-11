@@ -20,7 +20,8 @@ public class Panther extends Fighters implements Fight , BossInterface {
     int xp = 0;
     int gold = 0;
 
-    String getName() {
+    @Override
+   public String getName() {
         try {
             Scanner scanners = new Scanner(System.in);
             System.out.println("Enter the name of your Panther");
@@ -33,12 +34,17 @@ public class Panther extends Fighters implements Fight , BossInterface {
 
         return name;
     }
+    @Override
+    public String getname(){
+    return name;
+}
+    
+   @Override
+    public String getcolor(){
+    return color;
+}
 
-    public void setName(String name) { //it takes the value from somwhere else
-
-        this.name = name;
-    }
-
+    @Override
     String getColor() {
         try {
             Scanner scanners = new Scanner(System.in);
@@ -51,37 +57,6 @@ public class Panther extends Fighters implements Fight , BossInterface {
 
         return color;
     }
-
-    public void setColor(String color) { //it takes the value from somwhere else
-
-        this.color = color;
-    }
-
-/*
-    public Integer getatk() {
-        return atk;
-    }
-
-    public void setatk(int atk) {
-        this.atk = atk;
-    }
-
-    public Integer gethp() {
-        return hp;
-    }
-
-    public void sethp(int hp) {
-        this.hp = hp;
-    }
-
-    public Integer getspeed() {
-        return speed;
-    }
-
-    public void setspeed(int speed) {
-        this.speed = speed;
-    }
-*/
     public Integer getxp() {
         return xp;
     }
@@ -209,13 +184,13 @@ public class Panther extends Fighters implements Fight , BossInterface {
     }
 
   int bosslvl= 1;
-    @Override
-    public void bossconvertion(Fighters target) {
+   @Override
+    public void bossconvertion(Fighters target, int lvl) {
       
       bosslvl++;
-      target.sethp(target.gethp()*bosslvl);
-          target.setatk(target.getatk()*bosslvl);
-            target.setspeed(target.getspeed()*bosslvl);
+      target.sethp(target.gethp()*lvl);
+          target.setatk(target.getatk()*lvl);
+            target.setspeed(target.getspeed()*lvl);
     }
 
 }

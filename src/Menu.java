@@ -1,17 +1,20 @@
+
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author maxim
  */
 public class Menu {
-    void  firstStep(){
+  int lvl;  
+    void firstStep() {
         System.out.println("WELCOME TO THE VIRIMS -Animal Kindomg edition- prepare to fight");
-        
+
         System.out.println("-----------------------------------------\n"
                 + "|           1- D.Kong                   |\n"
                 + "|           2- Panther                   |\n"
@@ -19,11 +22,106 @@ public class Menu {
                 + "|           4- Human                     |\n"
                 + "|                                        |\n"
                 + "-----------------------------------------");
-    
-        
+
         System.out.println("Enter the number of the class you would like to be ");
     }
+
+    void getfighterinfo(Fighters userfighter) {
+        userfighter.setName(userfighter.getName());
+        userfighter.setColor(userfighter.getColor());
+        System.out.println("Welcome to THE VIRIMS " + userfighter.getname());
+        System.out.println("Your initial stats are ");
+        System.out.println(" \n *Color  -" + userfighter.getcolor() + "\n *ATK    -" + userfighter.getatk() + "\n *HP     -" + userfighter.gethp() + "\n *Speed  -" + userfighter.getspeed() + "\n *xp     -" + userfighter.xp);
+    }
+
+    void jump() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Press Enter to continue...");
+        scanner.nextLine();
+        for (int i = 0; i < 20; i++) {
+            System.out.println();
+        }
+    }
+
+    void fig(Fighters fig, Fighters riv) {
+
+        fig.start(fig, riv);
+        riv.start(riv, fig);
+        while (fig.isAlive() && riv.isAlive()) {
+
+            fig.turn(riv.speed, riv, fig, riv.atk, riv.hp);
+        }
+        if (fig.gethp() < 0) {
+            System.out.println("Rival WINS");
+        } else {
+            System.out.println("YOU WIN");
+        }
+
+        // call print list of fighters 
+    }
+    
+
+     int number5;
+        void bossfight(Fighters myfig, Panther panther, CrazyBird bird, Dkong kong2) {    
+             
+            Scanner fighterscanners2 = new Scanner(System.in);
+            number5 = fighterscanners2.nextInt();
+                            
+                        switch (number5) {
+                            case 1:
+                           
+                                myfig.start(myfig, panther);
+                                panther.start(panther, myfig);
+                                panther.bossconvertion(panther , lvl);
+                                while (myfig.isAlive() && panther.isAlive()) {
+
+                                    myfig.turn(panther.speed, panther, myfig, panther.getatk(), panther.hp);
+                                }
+
+                                if (myfig.isAlive() == false) {
+                                    System.out.println("BossPanther WINS");
+                                } else {
+                                    System.out.println("YOU WIN");
+
+                                }
+                                break;
+                            case 2:
+                            
+                                myfig.start(myfig, bird);
+                                bird.start(bird, myfig);
+                                bird.bossconvertion(bird , lvl);
+                                while (myfig.isAlive() && bird.isAlive()) {
+
+                                    myfig.turn(bird.speed, bird, myfig, bird.getatk(), bird.hp);
+
+                                }
+
+                                if (myfig.isAlive() == false) {
+                                    System.out.println("BossCrazyBird WINS");
+                                } else {
+                                    System.out.println("YOU WIN");
+                                }
+                                break;
+                            case 3:
+                                 
+                                myfig.start(myfig, kong2);
+                                kong2.start(kong2, myfig);
+                                kong2.bossconvertion(kong2 , lvl);
+                                while (myfig.isAlive() && kong2.isAlive()) {
+
+                                    myfig.turn(kong2.speed, kong2, myfig, kong2.getatk(), kong2.hp);
+
+                                }
+
+                                if (myfig.isAlive() == false) {
+                                    System.out.println("Boss DKong WINS");
+                                } else {
+                                    System.out.println("YOU WIN");
+                                }
+                                break;
+                            default:
+                                System.out.print("invalid");
+                                break;
 }
-
-     
-
+        }
+}
