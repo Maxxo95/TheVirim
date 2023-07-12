@@ -8,8 +8,6 @@
  *
  * @author maxim
  */
-public interface BossInterface {
-    void bossconvertion(Fighters target, int lvl);
+public abstract class Money {
+    
 }
-
-// Only characters that are not humanoid can become a boss in this game. Interfaces for certain classes

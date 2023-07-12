@@ -26,7 +26,7 @@ public interface Fight  {
     
       void heal(Fighters target, int amount); // interface for special move for magician other players cant implement it 
     
-    
+    // MAGICIAN CAN USE A SPECIAL MOVEMENT TO HEAL if death in normal fights 
 }
 
 

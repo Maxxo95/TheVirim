@@ -8,7 +8,7 @@
  *
  * @author maxim
  */
-public abstract class Weapon  {
+public abstract class Weapon  {   //WEAPON SUPER CLASS FOR SWORDS & SHIELDS && CAN BE ARMOR in the future (subclasses)
 
     int atk;
     int hp;

@@ -7,12 +7,12 @@ import java.util.Scanner;
  * and open the template in the editor.
  */
 
-/**
+/**            
  *
  * @author maxim
  */
 
-public abstract class Fighters implements BossInterface{
+public abstract class Fighters {
     String name;
     String color;
     int atk;
@@ -110,6 +110,8 @@ public abstract void turn(int speed, Fighters oponent, Fighters myfig, int atk, 
                         
                      
     } 
+
+ 
 
   
 }

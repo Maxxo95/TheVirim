@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author maxim
  */
-public class Menu {
+public class Menu {             //menu is a classs that i create to manage the main and organaize my code better 
   int lvl;  
     void firstStep() {
         System.out.println("WELCOME TO THE VIRIMS -Animal Kindomg edition- prepare to fight");

@@ -9,7 +9,7 @@
  * @author maxim
  */
 
-    public class superhero extends Human implements Fight {
+    public class superhero extends Human {
     
   String name = "Superman";
     String color = "Blue";
@@ -163,10 +163,7 @@
     }
 */
 
-    @Override
-    public void heal(Fighters target, int amount) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
     
 
 }

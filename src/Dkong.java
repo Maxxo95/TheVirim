@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author maxim
  */                                                      // AS many implements as you want only one extend
-public class Dkong extends Fighters implements Fight, BossInterface {
+public class Dkong extends Fighters implements  BossInterface {
 
     String name = "Dkong";
     String color = "grey";
@@ -85,24 +85,7 @@ public class Dkong extends Fighters implements Fight, BossInterface {
   }  
 
   int lvl;
-  void bossfight(Fighters myfig, Fighters boss){
-                                    myfig.start(myfig, boss);
-                                 
-                                    boss.bossconvertion(boss, lvl);
-                                    while (myfig.isAlive() && boss.isAlive()) {
-
-                                        myfig.turn(boss.speed, boss, myfig, boss.getatk(), boss.hp);
-                                    }
-
-                                    if (myfig.gethp() < 0) {
-                                        System.out.println("BossPanther WINS");
-                                    } else {
-                                        System.out.println("YOU WIN");
-
-                                    }
   
-  }
-
 
 
  
@@ -170,20 +153,6 @@ public class Dkong extends Fighters implements Fight, BossInterface {
         
     
    
- /*       @Override
-    public void rivtakeDamage(int atk, int hp, int speed) {
-
-        System.out.println(this.name + " has " + hp + " life points");
-        rivalhp -= atk;
-        System.out.println("   After the atack you have left " + rivalhp + " points");
-       vsturn += rivalspeed;
-        System.out.println(" Your turn count is: " + (turn) + " \n Rivals turn count is: " + vsturn);
-
-            if (rivalhp <= 0) {
-           rivalhp=(0);
-        } else {
-        }
-    } */
 
     @Override
     public boolean isAlive() {
@@ -191,17 +160,8 @@ public class Dkong extends Fighters implements Fight, BossInterface {
         return playerhp > 0;
     }
     
-  /*   @Override
-    public boolean opAlive() {
-        // Implement the logic to check if Dkong is alive
-        return rivalhp > 0;
-    }
-*/
 
-    @Override
-    public void heal(Fighters target, int amount) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     int bosslvl= 1;
     @Override
     public void bossconvertion(Fighters target, int lvl) {

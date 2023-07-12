@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author maxim
  */
-public class Panther extends Fighters implements Fight , BossInterface {
+public class Panther extends Fighters implements   BossInterface {
 
     String name = "Panther";
     String color = "Black";
@@ -178,10 +178,7 @@ public class Panther extends Fighters implements Fight , BossInterface {
     }
 */
 
-    @Override
-    public void heal(Fighters target, int amount) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
   int bosslvl= 1;
    @Override
@@ -193,4 +190,5 @@ public class Panther extends Fighters implements Fight , BossInterface {
             target.setspeed(target.getspeed()*lvl);
     }
 
+  
 }

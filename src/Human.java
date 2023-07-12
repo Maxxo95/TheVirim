@@ -11,8 +11,8 @@ import java.util.Scanner;
  *
  * @author maxim
  */
-public class Human extends Fighters  implements Fight, weaponInterface  {
-  String name = "Human";
+public class Human extends Fighters  implements  weaponInterface  {
+  String name = "Character";
 String color = "Blue";
 int atk ;
 int hp ;
@@ -202,10 +202,7 @@ String getName(){
     }
 */
 
-    @Override
-    public void heal(Fighters target, int amount) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
    @Override
     public void addweapon(Weapon targetweapon, Fighters target) {
@@ -215,12 +212,11 @@ String getName(){
       System.out.println("\n"+targetweapon.getName()+ " added");
     }
 
+   
+
   
 
-    @Override
-    public void bossconvertion(Fighters target, int lvl) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
 
 
 
