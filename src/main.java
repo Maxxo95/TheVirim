@@ -1,5 +1,13 @@
 
+import Weapon.Shield;
+import Weapon.Sword;
 import java.util.Scanner;
+import Fighters.Dkong;
+import Fighters.CrazyBird;
+import Fighters.Human;
+import Fighters.Panther;
+import Fighters.Magician;
+import Fighters.superhero;
 
 /**
  *

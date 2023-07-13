@@ -20,14 +20,14 @@ import java.util.Scanner;
  */
 
 public abstract class Fighters {
-    String name;
-    String color;
-    int atk;
-    int hp;
-    int speed;
-    int xp;
-    int gold;
-    String getname;
+ public   String name;
+   public  String color;
+   public  int atk;
+   public  int hp;
+  public  int speed;
+  public   int xp;
+  public   int gold;
+   public  String getname;
  public Fighters(int hp, int atk, int speed){
      this.sethp(hp);
      this.setatk(atk);
@@ -65,7 +65,7 @@ public abstract void turn(int speed, Fighters oponent, Fighters myfig, int atk, 
 
      // public abstract void rivtakeDamage(int atk,int hp, int speed)  ;
 
-    String getName() {
+   public String getName() {
        try {
             Scanner scanners = new Scanner(System.in);
             System.out.println("Enter the name of your Fighter");
@@ -78,18 +78,18 @@ public abstract void turn(int speed, Fighters oponent, Fighters myfig, int atk, 
 
         return name;
     }
- String getname(){
+public String getname(){
     return name;
 }
    public void setName(String name) { //it takes the value from somwhere else
 
         this.name = name;
     }
-    String getColor() {
+   public String getColor() {
     
         return color;
     }
-     String getcolor() {
+  public   String getcolor() {
     
         return color;
     }
@@ -98,9 +98,9 @@ public abstract void turn(int speed, Fighters oponent, Fighters myfig, int atk, 
 
         this.color = color;
     }
-    boolean isAlive(){
+   public boolean isAlive(){
     return true;}
-    void battle(Fighters myfig, Fighters riv){
+  public  void battle(Fighters myfig, Fighters riv){
                         myfig.start(myfig, riv);
                         riv.start(riv, myfig);
                         while (myfig.isAlive() && riv.isAlive()) {

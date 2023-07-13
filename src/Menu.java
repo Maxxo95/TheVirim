@@ -1,5 +1,9 @@
 
 import java.util.Scanner;
+import Fighters.Fighters;
+import Fighters.Panther;
+import Fighters.CrazyBird;
+import Fighters.Dkong;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -31,7 +35,7 @@ public class Menu {             //menu is a classs that i create to manage the m
         userfighter.setColor(userfighter.getColor());
         System.out.println("Welcome to THE VIRIMS " + userfighter.getname());
         System.out.println("Your initial stats are ");
-        System.out.println(" \n *Color  -" + userfighter.getcolor() + "\n *ATK    -" + userfighter.getatk() + "\n *HP     -" + userfighter.gethp() + "\n *Speed  -" + userfighter.getspeed() + "\n *xp     -" + userfighter.xp);
+        System.out.println(" \n *Color  -" + userfighter.getcolor() + "\n *ATK    -" + userfighter.getatk() + "\n *HP     -" + userfighter.gethp() + "\n *Speed  -" + userfighter.getspeed() + "\n *xp     -" );
     }
 
     void jump() {
