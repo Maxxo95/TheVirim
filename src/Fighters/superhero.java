@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Fighters;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+import java.util.Scanner;
 
 /**
  *
@@ -25,43 +18,58 @@ package Fighters;
    public  int xp = 0;
    public  int gold = 0;
 
-  /*
-    public Integer getatk() {
-        return atk;
-    }
+   
+     @Override
+   public String getName() {
+        try {
+            Scanner scanners = new Scanner(System.in);
+            System.out.println("Enter the name of your hero");
+            name = scanners.nextLine();
 
-    public void setatk(int atk) {
-        this.atk = atk;
-    }
+            ///// still have to know for what errors   
+        } catch (Exception e) {
+            System.out.println("You disoveid the rules");
+        }
 
-    public Integer gethp() {
-        return hp;
+        return name;
     }
+    @Override
+    public String getcolor(){
+    return color;
+}
+    @Override
+   public String getColor(){
+  try {
+            Scanner scanners = new Scanner(System.in);
+            System.out.println("Enter the color of " + name);         
+            color = scanners.nextLine();
+           
+            
+        } catch (Exception e) {
+            System.out.println("You disoveid the rules");
+        }   
 
-    public void sethp(int hp) {
-        this.hp = hp;
-    }
-
-    public Integer getspeed() {
-        return speed;
-    }
-
-    public void setspeed(int speed) {
-        this.speed = speed;
-    }
-*/
+ return color;
+}
+   
+ 
+ 
+  @Override
     public Integer getxp() {
         return xp;
     }
 
+  @Override
     public void setxp(int xp) {
         this.xp = xp;
     }
 
+  @Override
     public Integer getgold() {
         return gold;
     }
 
+  @Override
     public void setgold(int xp) {
         this.xp = xp;
     }
@@ -70,14 +78,11 @@ package Fighters;
         super(hp, atk, speed);
         // other initialization code for Dkong
    
-  this.setName(name);
-  this.setColor(color);
+ this.setName( this.getname());
+   this.setColor( this.getcolor());
   }  
 
 
-
-
-  
     int hptemp;
     private int vsturn ;
    private int turn  ;
@@ -108,68 +113,44 @@ package Fighters;
     
   
     
-    @Override
+      @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
 
-        if (vsturn > turn) {           
-            System.out.println(this.name + " is taking damage");
+        if (vsturn > turn) {      
+            
+            System.out.println("\n"+myfig.getname()+ " is taking damage");
             myfig.takeDamage(myfig, oponent.getatk());
             turn += speedtemp;
            
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         } else {
-            System.out.println(" The Rival is taking damage");
+            System.out.println("\n"+oponent.getname +" is taking damage");
             oponent.takeDamage(oponent, playeratk);
             vsturn += oponent.getspeed();
             
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         }
     }
    
     @Override
     public void takeDamage(Fighters target, int atk) {
 
-        System.out.println(this.name + " has " + target.gethp() + " life points");
+        System.out.println(target.getname + " has " + target.gethp() + " life points");
         playerhp = target.gethp();
         playerhp -= atk;        
         target.sethp(playerhp);
-        System.out.println("   After the atack you have left " + playerhp + " points");
+        System.out.println("  After the atack you have left " + playerhp + " points");
        
         
         
         }
         
-    
+        
    
- /*       @Override
-    public void rivtakeDamage(int atk, int hp, int speed) {
-
-        System.out.println(this.name + " has " + hp + " life points");
-        rivalhp -= atk;
-        System.out.println("   After the atack you have left " + rivalhp + " points");
-       vsturn += rivalspeed;
-        System.out.println(" Your turn count is: " + (turn) + " \n Rivals turn count is: " + vsturn);
-
-            if (rivalhp <= 0) {
-           rivalhp=(0);
-        } else {
-        }
-    } */
-
     @Override
     public boolean isAlive() {
         // Implement the logic to check if Dkong is alive
         return playerhp > 0;
     }
-    
-  /*   @Override
-    public boolean opAlive() {
-        // Implement the logic to check if Dkong is alive
-        return rivalhp > 0;
-    }
-*/
-
-
-    
 
 }

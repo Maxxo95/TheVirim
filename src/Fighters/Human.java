@@ -21,7 +21,7 @@ import Interfaces.weaponInterface;
  * @author maxim
  */
 public class Human extends Fighters  implements  weaponInterface  {
-   public String name = "Character";
+   public String name = "Human";
  public String color = "Blue";
  public int atk ;
  public int hp ;
@@ -30,25 +30,17 @@ public class Human extends Fighters  implements  weaponInterface  {
  public int gold = 0; 
 
 
- public String getName(){
-  try {
-            Scanner scanners = new Scanner(System.in);
-            System.out.println("Enter the name of your Human");         
-            name = scanners.nextLine();
-           
-                                                           ///// still have to know for what errors   
-        } catch (Exception e) {
-            System.out.println("You disoveid the rules");
-        }   
-
- return name;
+ 
+    @Override
+    public String getname(){
+    return name;
 }
-   public void setName(String name) { //it takes the value from somwhere else
-       
-        this.name = name;
-    }  
    
-   
+    @Override
+    public String getcolor(){
+    return color;
+}
+    @Override
    public String getColor(){
   try {
             Scanner scanners = new Scanner(System.in);
@@ -62,10 +54,7 @@ public class Human extends Fighters  implements  weaponInterface  {
 
  return color;
 }
-   public void setColor(String color) { //it takes the value from somwhere else
-       
-        this.color = color;
-    }  
+   
  
 
     public Integer getxp() {
@@ -127,21 +116,22 @@ public class Human extends Fighters  implements  weaponInterface  {
     
   
     
-    @Override
+          @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
 
-        if (vsturn > turn) {           
-            System.out.println(this.name + " is taking damage");
+        if (vsturn > turn) {      
+            
+            System.out.println("\n"+myfig.getname() + " is taking damage");
             myfig.takeDamage(myfig, oponent.getatk());
             turn += speedtemp;
            
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         } else {
-            System.out.println(" The Rival is taking damage");
+            System.out.println("\n Rival is taking damage");
             oponent.takeDamage(oponent, playeratk);
             vsturn += oponent.getspeed();
             
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         }
     }
    
@@ -152,11 +142,12 @@ public class Human extends Fighters  implements  weaponInterface  {
         playerhp = target.gethp();
         playerhp -= atk;        
         target.sethp(playerhp);
-        System.out.println("   After the atack you have left " + playerhp + " points");
+        System.out.println("  After the atack you have left " + playerhp + " points");
        
         
         
         }
+        
         
     
    

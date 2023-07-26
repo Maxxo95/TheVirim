@@ -24,16 +24,21 @@ public class Menu {             //menu is a classs that i create to manage the m
                 + "|           2- Panther                   |\n"
                 + "|           3- CrazyBird                 |\n"
                 + "|           4- Human                     |\n"
-                + "|                                        |\n"
+                + "|                                        |\n"   
+                + "|  D.kong, Panther & Magician            |\n"
+                + "|  Fully functional                      |\n"                
+                + "|                                        |\n"  
+                + "| Human only works vs hero               |\n"  
+                + "| Crazy B & Hero future develop          |\n"  
                 + "-----------------------------------------");
 
         System.out.println("Enter the number of the class you would like to be ");
     }
 
-    void getfighterinfo(Fighters userfighter) {
+    void getfighterinfo(Fighters userfighter) { 
         userfighter.setName(userfighter.getName());
         userfighter.setColor(userfighter.getColor());
-        System.out.println("Welcome to THE VIRIMS " + userfighter.getname());
+        System.out.println("\nWelcome to THE VIRIMS " + userfighter.getname());
         System.out.println("Your initial stats are ");
         System.out.println(" \n *Color  -" + userfighter.getcolor() + "\n *ATK    -" + userfighter.getatk() + "\n *HP     -" + userfighter.gethp() + "\n *Speed  -" + userfighter.getspeed() + "\n *xp     -" );
     }
@@ -47,7 +52,7 @@ public class Menu {             //menu is a classs that i create to manage the m
         }
     }
 
-    void fig(Fighters fig, Fighters riv) {
+    void fig(Fighters fig, Fighters riv) {  //recreate a fight within the cvharacters picked 
 
         fig.start(fig, riv);
         riv.start(riv, fig);
@@ -58,7 +63,7 @@ public class Menu {             //menu is a classs that i create to manage the m
         if (fig.gethp() < 0) {
             System.out.println("Rival WINS");
         } else {
-            System.out.println("YOU WIN");
+            System.out.println("YOU WIN \n");
         }
 
         // call print list of fighters 
@@ -69,7 +74,29 @@ public class Menu {             //menu is a classs that i create to manage the m
         void bossfight(Fighters myfig, Panther panther, CrazyBird bird, Dkong kong2) {    
              
             Scanner fighterscanners2 = new Scanner(System.in);
-            number5 = fighterscanners2.nextInt();
+            
+               while (true) {
+            System.out.print("Enter a number (1-3): ");
+
+            if (fighterscanners2.hasNextInt()) { // if is an integer 
+                
+   number5 = fighterscanners2.nextInt(); //oponent scanner
+
+                if (number5 >= 1 && number5 <= 3) {
+                    break;  // Valid number, exit the loop
+                } else {
+                    System.out.println("Invalid input. Please enter a number between 1 and 3.");
+                }
+            } else { // else is not a int so will make it string
+                String invalidInput = fighterscanners2.next();
+                System.out.println("Invalid input. Please enter a number between 1 and 3.");
+            }
+        }
+
+
+
+            
+           
                             
                         switch (number5) {
                             case 1:

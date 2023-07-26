@@ -6,6 +6,7 @@
 package Fighters;
 
 import Interfaces.Specialmove;
+import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -28,31 +29,26 @@ import Interfaces.Specialmove;
     public int xp = 0;
    public  int gold = 0;
 
-  /*
-    public Integer getatk() {
-        return atk;
-    }
+  @Override
+    public String getcolor(){
+    return color;
+}
+    @Override
+   public String getColor(){
+  try {
+            Scanner scanners = new Scanner(System.in);
+            System.out.println("Enter the color of " + name);         
+            color = scanners.nextLine();
+           
+            
+        } catch (Exception e) {
+            System.out.println("You disoveid the rules");
+        }   
 
-    public void setatk(int atk) {
-        this.atk = atk;
-    }
-
-    public Integer gethp() {
-        return hp;
-    }
-
-    public void sethp(int hp) {
-        this.hp = hp;
-    }
-
-    public Integer getspeed() {
-        return speed;
-    }
-
-    public void setspeed(int speed) {
-        this.speed = speed;
-    }
-*/
+ return color;
+}
+   
+ 
     public Integer getxp() {
         return xp;
     }
@@ -72,7 +68,7 @@ import Interfaces.Specialmove;
   public Magician(int hp, int atk, int speed) {
         super(hp, atk, speed);
         // other initialization code for Dkong
-   
+
   this.setName(name);
   this.setColor(color);
   }  
@@ -92,7 +88,7 @@ import Interfaces.Specialmove;
     int playeratk  ;
     int rivalatk;
 
-    
+
       @Override
     public void start(Fighters player, Fighters oponent) {
     playerhp = player.gethp() ;
@@ -108,41 +104,38 @@ import Interfaces.Specialmove;
     
     }}
     
-    @Override
+       @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
 
-        if (vsturn > turn) {           
-            System.out.println(this.name + " is taking damage");
+        if (vsturn > turn) {      
+            
+            System.out.println("\n"+myfig.getname()+ " is taking damage");
             myfig.takeDamage(myfig, oponent.getatk());
             turn += speedtemp;
-            
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+           
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         } else {
-            System.out.println(" The Rival is taking damage");
+            System.out.println("\n"+oponent.getname +" is taking damage");
             oponent.takeDamage(oponent, playeratk);
             vsturn += oponent.getspeed();
             
-            
-            
-            
-            
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
-       
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         }
     }
    
     @Override
     public void takeDamage(Fighters target, int atk) {
 
-        System.out.println(this.name + " has " + target.gethp() + " life points");
+        System.out.println(target.getname + " has " + target.gethp() + " life points");
         playerhp = target.gethp();
         playerhp -= atk;        
         target.sethp(playerhp);
-        System.out.println("   After the atack you have left " + playerhp + " points");
+        System.out.println("  After the atack you have left " + playerhp + " points");
        
         
         
         }
+        
         
     
    

@@ -125,21 +125,22 @@ public class CrazyBird extends Fighters implements  BossInterface {
     
   
     
-    @Override
+        @Override
     public void turn(int speed, Fighters oponent, Fighters myfig, int atk, int hp) {
 
-        if (vsturn > turn) {           
-            System.out.println(this.name + " is taking damage");
+        if (vsturn > turn) {      
+            
+            System.out.println("\n"+myfig.getname() + " is taking damage");
             myfig.takeDamage(myfig, oponent.getatk());
             turn += speedtemp;
            
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         } else {
-            System.out.println(" The Rival is taking damage");
+            System.out.println("\n"+oponent.getname() +" is taking damage");
             oponent.takeDamage(oponent, playeratk);
             vsturn += oponent.getspeed();
             
-             System.out.println(" Your turn count is: " + (turn) + " riv turn count is " + vsturn);
+             System.out.println("Your turn count is: " + (turn) + " rival turn count is " + vsturn);
         }
     }
    
@@ -150,11 +151,12 @@ public class CrazyBird extends Fighters implements  BossInterface {
         playerhp = target.gethp();
         playerhp -= atk;        
         target.sethp(playerhp);
-        System.out.println("   After the atack you have left " + playerhp + " points");
+        System.out.println("  After the atack you have left " + playerhp + " points");
        
         
         
         }
+        
         
     
    
