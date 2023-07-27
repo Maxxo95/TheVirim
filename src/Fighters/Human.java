@@ -151,33 +151,14 @@ public class Human extends Fighters  implements  weaponInterface  {
         
     
    
- /*       @Override
-    public void rivtakeDamage(int atk, int hp, int speed) {
-
-        System.out.println(this.name + " has " + hp + " life points");
-        rivalhp -= atk;
-        System.out.println("   After the atack you have left " + rivalhp + " points");
-       vsturn += rivalspeed;
-        System.out.println(" Your turn count is: " + (turn) + " \n Rivals turn count is: " + vsturn);
-
-            if (rivalhp <= 0) {
-           rivalhp=(0);
-        } else {
-        }
-    } */
-
+ 
     @Override
     public boolean isAlive() {
         // Implement the logic to check if Dkong is alive
         return playerhp > 0;
     }
     
-  /*   @Override
-    public boolean opAlive() {
-        // Implement the logic to check if Dkong is alive
-        return rivalhp > 0;
-    }
-*/
+
 
   
 

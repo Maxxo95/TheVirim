@@ -19,20 +19,7 @@ import java.util.Scanner;
    public  int gold = 0;
 
    
-     @Override
-   public String getName() {
-        try {
-            Scanner scanners = new Scanner(System.in);
-            System.out.println("Enter the name of your hero");
-            name = scanners.nextLine();
 
-            ///// still have to know for what errors   
-        } catch (Exception e) {
-            System.out.println("You disoveid the rules");
-        }
-
-        return name;
-    }
     @Override
     public String getcolor(){
     return color;

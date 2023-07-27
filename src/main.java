@@ -202,8 +202,9 @@ public class main {
         for (int i = 0; i < 10; i++) {
             System.out.println();
         }
-///
-        while (true) {
+///\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//error handler       
+while (true) {
             System.out.print("Enter a number (1-6): ");
 
             if (fighterscanner.hasNextInt()) { // if is an integer 
@@ -220,13 +221,16 @@ public class main {
                 System.out.println("Invalid input. Please enter a number between 1 and 6.");
             }
         }
+
+// create instances for the bosses
 CrazyBird bird2 = new CrazyBird(10, 8, 140);
+  Panther panther2 = new Panther(30, 20, 50);
+      Dkong kong2 = new Dkong(60, 60, 20); 
         switch (number) { ///// switch for your character vs choosen oponent
 
             case 1:                                //First case DKong                                  // KING KONG
-                Dkong kong2 = new Dkong(60, 60, 20);     // IF PICK King Kong in the pass charac selection switch 
-  Panther panther2 = new Panther(30, 20, 50);
-      
+                 // IF PICK King Kong in the pass charac selection switch 
+
       
                 switch (number3) {
                     case 1:
@@ -320,7 +324,7 @@ CrazyBird bird2 = new CrazyBird(10, 8, 140);
 
             case 2:
               
-         panther2 = new Panther(30, 20, 50);     // IF PICK King Kong in the pass charac selection switch 
+         panther2 = new Panther(30, 20, 50);     // IF PICK Panther in the pass charac selection switch 
 
                 // call print list of fighters 
                 switch (number3) {
@@ -411,17 +415,17 @@ CrazyBird bird2 = new CrazyBird(10, 8, 140);
                 }
                 break;
             case 3:
-                System.out.println("Crazy Bird");
+                System.out.println("Crazy Bird"); // Crazy bird not available
 
                 break;
 
             case 4:
-                System.out.println("Hero");
-
+                System.out.println("Hero");  //hero not available
+ 
                 break;
 
-            case 5: // Magician first 3 numbers work 
-                switch (number3) {
+            case 5: // Magician all working
+                switch (number3) {  
                     case 1:
 
                         menu.fig(magic, hero);
@@ -551,7 +555,8 @@ CrazyBird bird2 = new CrazyBird(10, 8, 140);
                 }
                 break;
 
-            case 6: //HUMAN ONLY HERO WORKS
+            case 6:                                               
+                                                                                                 //HUMAN ONLY HERO WORKS
 
                 Human human2 = new Human(human.gethp(), human.getatk(), human.getspeed());
                 switch (number3) {

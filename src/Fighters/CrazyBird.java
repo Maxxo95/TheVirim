@@ -29,24 +29,7 @@ public class CrazyBird extends Fighters implements  BossInterface {
  public int gold = 0; 
 
 
-    @Override
-   public String getName() {
-        try {
-            Scanner scanners = new Scanner(System.in);
-            System.out.println("Enter the name of your CrazyBird");
-            name = scanners.nextLine();
 
-            ///// still have to know for what errors   
-        } catch (Exception e) {
-            System.out.println("You disoveid the rules");
-        }
-
-        return name;
-    }
-    @Override
-    public String getname(){
-    return name;
-}
     
    @Override
     public String getcolor(){
@@ -159,34 +142,13 @@ public class CrazyBird extends Fighters implements  BossInterface {
         
         
     
-   
- /*       @Override
-    public void rivtakeDamage(int atk, int hp, int speed) {
-
-        System.out.println(this.name + " has " + hp + " life points");
-        rivalhp -= atk;
-        System.out.println("   After the atack you have left " + rivalhp + " points");
-       vsturn += rivalspeed;
-        System.out.println(" Your turn count is: " + (turn) + " \n Rivals turn count is: " + vsturn);
-
-            if (rivalhp <= 0) {
-           rivalhp=(0);
-        } else {
-        }
-    } */
+  
 
     @Override
     public boolean isAlive() {
         // Implement the logic to check if Dkong is alive
         return playerhp > 0;
     }
-    
-  /*   @Override
-    public boolean opAlive() {
-        // Implement the logic to check if Dkong is alive
-        return rivalhp > 0;
-    }
-*/
 
     
 int bosslvl= 1;
